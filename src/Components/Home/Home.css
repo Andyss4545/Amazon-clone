@@ -1,0 +1,16 @@
+.home_banner{
+     width: 100%;
+}
+
+.home_banner img{
+      width: 100%;
+      margin-bottom: -120px;
+      z-index: -1;
+}
+
+.home_row{
+    z-index: 2;
+     margin-left: 10px;
+     margin-right: 10px;
+     display: flex;
+}

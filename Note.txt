@@ -1,0 +1,68 @@
+STEPS In Building Amazon clone
+
+1. Set up React App using create react App
+2. Set Up Firebase
+3. Set up React Router
+4. Build the nav bar (header)
+5. Build the Banner
+6. Build the Product Component
+7. Introduction to Context API
+8. Setup Add to Basket Button
+9. Build CheckOut page
+10. Build Subtotal Component
+11. Build Login page
+12 Deploy The App live on Firebase
+
+Folders/files to create 
+
+Components 
+-Checkout
+---Checkout.jsx
+---CheckoutProduct
+---SubTotal.jsx
+
+-Home
+---Home.jsx
+-Navbar
+---Navbar.jsx
+-Product 
+---Product.jsx
+
+-StateProvider
+---Reducer
+---StateProvider.jsx
+
+
+--modules to install
+
+-----npm install axios
+-----npm install react-router-dom
+
+          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+
+
+Amazon Image ---> https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg
+https://m.media-amazon.com/images/I/71dbxIcDioL._SX3000_.jpg
+
+Checkout: https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/GiftGuides/Fuji_holiday_header_desktop_3000x250.jpg
+home_image ---- mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+
+//   React API Context
+
+import React, { createContext, useContext, useReducer } from "react";
+
+// This is the DATA LAYER
+export const StateContext = createContext();
+
+// BUILD A PROVIDER AND WRAP OUR ENTIRE APP AND GIVE ACCESS TO STATE LAYER ABOVE
+
+export const StateProvider = ({ reducer, initialState, children }) => (
+  <StateContext.Provider value={useReducer(reducer, initialState)}>
+    {children}
+  </StateContext.Provider>
+);
+
+// This is how we use it inside of a component
+
+export const useStateValue = () => useContext(StateContext);
