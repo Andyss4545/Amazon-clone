@@ -11,8 +11,12 @@
     width: 100%;
     background-color: white;
     z-index: 1;
-    
+    transition: all 0.4s;
 }
+
+ /* .product:hover{
+    transform: scale(1.004);
+}  */
 
 .product_price {
     margin-top: 5px;

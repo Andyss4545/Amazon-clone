@@ -6,7 +6,8 @@ import SubTotal from "./SubTotal";
 
 let Checkout = () => {
   // import the basket and useSateValue from stateprovider
-  let [{ basket }] = useStateValue();
+  const [{ basket }] = useStateValue();
+  const [{ user }] = useStateValue();
   console.log(basket);
   return (
     <div className="checkout">
@@ -28,6 +29,7 @@ let Checkout = () => {
           </div>
         ) : (
           <div>
+            <h3>Hello, {user?.email}</h3>
             <h2 className="checkout_title">Your Shopping Basket</h2>
 
             {/** List out all of the checkout products */}

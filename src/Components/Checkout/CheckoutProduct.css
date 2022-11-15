@@ -2,6 +2,11 @@
     margin-top: 20px;
      display: flex;
      margin-left: 25px;
+     transition: all .5s;
+}
+
+.checkoutProduct:hover{
+      transform: scale(1.003);
 }
 
 .checkoutProduct img{

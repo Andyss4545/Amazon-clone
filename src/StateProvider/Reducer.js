@@ -4,37 +4,22 @@
 // the empty basket represent the store as an object
 export const initialState ={
    basket: [
-        {
-             id: "jx8NrJdg",
-             title: 
-                "The Man Startup: How constant Innovation Creates Employment",
-             price: 45.96,
-             rating: 5,
-             image:"https://m.media-amazon.com/images/I/41qUrJxKkmL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
-          },
+      //   {
+      //        id: "jx8NrJdg",
+      //        title: 
+      //           "The Man Startup: How constant Innovation Creates Employment",
+      //        price: 45.96,
+      //        rating: 5,
+      //        image:"https://m.media-amazon.com/images/I/41qUrJxKkmL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+      //     },
 
-
-          {
-             id: "U97rDQ07",
-             title: "Marcy Multifunction Steel Home Gym",
-             price: 155,
-             rating: 4,
-             image:"https://m.media-amazon.com/images/I/71h3CfiBamL._AC_SX569_.jpg"
-          },
-
-
-          {
-             id: "XVrVOq6D",
-             title: "Controller Gear The Legend of Zelda Baseball Cap Adjustable Hat Collection",
-             price: 21.99,
-             rating: 4,
-             image: "https://m.media-amazon.com/images/I/81L8UONqlgL._AC_UX522_.jpg",
-          }
 
  ],
+ // by default the user is null
    user: null,
 }
 
+// Selector to get the basket total and d basket itse;lf and get the basket and reduce to map through and tally out the total
 export const getBasketTotal = (basket) =>  
 basket?.reduce((amount, item) => item.price + amount, 0)
 
@@ -65,7 +50,7 @@ const reducer = (state, action) => {
                if (index >= 0){
                     // item exists in basket, remove it
                     newBasket.splice(index, 1)
-                  //   splice means to cut the new basket
+                  //   splice means to cut the new basket by 1
                } else {
                   // red console log to warn if id not in the basket
                      console.warn(
@@ -74,7 +59,16 @@ const reducer = (state, action) => {
                }
 
                // set the basket to a new value because we just slice out our basket
-           return {...state, basket: newBasket}
+           return {
+            ...state, 
+            basket: newBasket
+         }
+
+         case "SET_USER": 
+         return {
+             ...state,
+             user: action.user
+         }
         // If it's not add to basket or not remove from basket return ---> default
         default: 
             return state

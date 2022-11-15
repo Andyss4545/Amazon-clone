@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "script-1a7ed",
+    "build": "script-1a7ed"
+  },
+  "targets": {},
+  "etags": {}
+}

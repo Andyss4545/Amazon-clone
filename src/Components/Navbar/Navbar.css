@@ -68,7 +68,19 @@
        background-color: #eea632;
 }
 
+.nav_login{
+     text-decoration: none;
+     color: white;
+}
+
+.nav_login:hover{
+       color: #eea632;
+}
 .nav_checkout{
     margin-top: 8px;
      display: flex;
+}
+
+.nav_shopping:hover{
+   color: white !important;
 }

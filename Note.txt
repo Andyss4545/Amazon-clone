@@ -47,6 +47,7 @@ https://m.media-amazon.com/images/I/71dbxIcDioL._SX3000_.jpg
 Checkout: https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/GiftGuides/Fuji_holiday_header_desktop_3000x250.jpg
 home_image ---- mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 
+To create notification when button is clicked, use toastify https://www.npmjs.com/package/react-toastify
 
 //   React API Context
 
@@ -66,3 +67,8 @@ export const StateProvider = ({ reducer, initialState, children }) => (
 // This is how we use it inside of a component
 
 export const useStateValue = () => useContext(StateContext);
+
+To install stripe-- we install two stripe dependencies
+
+npm i @stripe/stripe-js --force
+

@@ -1,0 +1,147 @@
+.banners{
+    width: 100%;
+}
+
+.bannersRow{
+    display: flex;
+     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding-right: 5px; */
+}
+
+.bannersRow_title{
+    margin-bottom: 10px;
+}
+
+.bannersRow_col1{
+    flex: 0.2; 
+    /* height: 380px; */
+    max-height: 380px;
+    margin-right: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-left: 5px;
+}
+
+.bannersRow_col1 > img{
+    object-fit: contain;
+    margin-bottom: 80px;
+}
+
+.bannersRow_col1 > a{
+    text-decoration: none;
+    color: #007185;
+}
+
+.bannersRow_col2{
+     flex: 0.25; 
+     /* height: 380px; */
+     max-height: 380px;
+     margin-right: 10px;
+     background: #fff;
+     margin-bottom: 10px;
+     padding-top: 30px;
+    padding-left: 5px;
+}
+
+.bannersRow_Content1 > img{
+    object-fit: contain;
+     width: 160px;
+}
+.bannersRow_col2 > a{
+    text-decoration: none;
+    color: #007185;
+}
+
+.bannersRow_col2 > img{
+    margin-bottom: 80px;
+}
+
+.bannersRow_content{
+    margin-bottom: 65px;
+}
+
+.bannersRow_col3{
+    flex: 0.25;
+    /* height: 380px; */
+    max-height: 380px;
+    margin-right: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-left: 5px;
+}
+.bannersRow_col3 > img{
+    object-fit: contain;
+    margin-bottom: 65px;
+}
+
+.bannersRow_col3 > a{
+    text-decoration: none;
+    color: #007185;
+}
+
+.bannersRow_col1 > a{
+    text-decoration: none;
+    color: #007185;
+}
+
+.bannersRow_col4{
+    flex: 0.25;
+    /* height: 380px; */
+    max-height: 380px;
+    margin-bottom: 10px;
+    /* padding-top: -10px; */
+    padding-left: 5px;
+}
+
+.bannerRow_SignIn{
+    background-color: #fff;
+    padding: 20px 40px 27px 20px;
+    margin-bottom: 20px;
+    margin-top: -15px;
+}
+
+.bannerRow_SignIn > h3{
+    margin-bottom: 10px;
+}
+
+.bannerRow_SignIn a{
+    background: #FFD814;
+    border-color: #FCD200;
+    border-radius: 20px;
+    color: #000;
+    text-decoration: none;
+    padding: 6px 90px 6px 90px;
+}
+
+.bannersRow_col4 > img{
+     object-fit: contain;
+      width: 320px;
+}
+
+.bannersRow_content{
+     display: grid;
+     grid-template-columns:repeat(2, 1fr); 
+     overflow: hidden;
+}
+
+.row2_last{
+    max-height: 380px;
+    margin-right: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-left: 5px;
+}
+
+.row2_last > img{
+    margin-bottom: 39px;
+}
+
+.row2_last > a{
+    text-decoration: none;
+    color: #007185;
+}

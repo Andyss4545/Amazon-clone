@@ -2,6 +2,8 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import "../Checkout/CheckoutProduct.css";
 import { useStateValue } from "../../StateProvider/StateProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // pass props such as id, title, price, image, rating from Checkout.jsx
 let CheckoutProduct = ({ id, price, image, rating, title }) => {
@@ -12,6 +14,18 @@ let CheckoutProduct = ({ id, price, image, rating, title }) => {
     dispatch({
       type: "REMOVE_FROM_BASKET",
       id: id,
+    });
+
+    // toast is a library to create notification when button is clicked
+    toast("Product removed from cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
     });
   };
 
@@ -44,6 +58,7 @@ let CheckoutProduct = ({ id, price, image, rating, title }) => {
         <button onClick={removeFromBasket} className="checkoutProduct_btn">
           Remove From Basket
         </button>
+        <ToastContainer />
       </div>
     </div>
   );

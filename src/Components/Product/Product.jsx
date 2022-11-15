@@ -2,6 +2,8 @@ import React from "react";
 import "../Product/Product.css";
 import StarIcon from "@mui/icons-material/Star";
 import { useStateValue } from "../../StateProvider/StateProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // id, title, price, rating image are all props from products components in Home.jsx
 function Product({ id, title, price, rating, image }) {
@@ -18,6 +20,17 @@ function Product({ id, title, price, rating, image }) {
         rating: rating,
         image: image,
       },
+    });
+
+    toast.success(" Product added to card", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
     });
   };
 
@@ -49,6 +62,7 @@ function Product({ id, title, price, rating, image }) {
 
       {/* call the addToBasket function with onclick on the button */}
       <button onClick={addToBasket}>Add to basket</button>
+      <ToastContainer />
     </div>
   );
 }

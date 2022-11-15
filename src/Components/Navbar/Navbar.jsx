@@ -4,11 +4,21 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../Navbar/Navbar.css";
 import { useStateValue } from "../../StateProvider/StateProvider";
+import { auth } from "../../FirebaseDetails";
 
 function Navbar() {
   // import the current state of the basket from stateprovider.jsx
-  let [{ basket }] = useStateValue();
-  console.log(basket);
+  const [{ basket }] = useStateValue();
+  // console.log(basket);
+  const [{ user }] = useStateValue(); // import the current user
+
+  //  tell firebase to handle SignIn and SignOut
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
   return (
     <div className="nav">
       {/* wrap logo in the router Link tag*/}
@@ -30,9 +40,16 @@ function Navbar() {
 
       <div className="nav_info">
         {/* {1 links} */}
-        <Link className="nav_link" to={"/login"}>
-          <small className="nav_topline1">Hello Tope</small>
-          <p className="nav_topline2">Sign In</p>
+        {/** only if there was no user, then we navigate to d login page */}
+        <Link
+          onClick={handleAuthentication}
+          className="nav_link"
+          to={!user && "/login"}
+        >
+          <small className="nav_topline1">
+            Hello <span>{user ? "Guest" : user?.email}</span>
+          </small>
+          <p className="nav_topline2">{user ? "Sign Out" : "Sign In"}</p>
         </Link>
 
         {/* {2 links} */}
